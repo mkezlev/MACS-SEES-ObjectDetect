@@ -1,0 +1,116 @@
+https://www.kaggle.com/datasets/kaggleashwin/vehicle-type-recognition
+
+https://docs.edgeimpulse.com/hardware/boards/arduino-nano-33-ble-sense
+
+https://docs.edgeimpulse.com/tutorials/end-to-end/object-detection-bounding-boxes
+
+https://dronebotworkshop.com/esp32-object-detect/
+
+
+https://randomnerdtutorials.com/esp32-cam-video-streaming-face-recognition-arduino-ide/
+
+https://randomnerdtutorials.com/esp32-cam-troubleshooting-guide/
+
+
+https://github.com/eloquentarduino/EloquentEsp32cam
+https://github.com/ginixsan/CamS3Library
+https://github.com/tanakamasayuki/Arduino_TensorFlowLite_ESP32
+
+
+
+Camera Pin	Description		Metro ESP32-S3 Pin
+3V		3.3V Power		3.3V
+GND		Ground			GND
+RST		Reset (Optional)	D33 (GPIO 33) or NC
+PWDN		Power Down (Optional)	D32 (GPIO 32) or NC
+XCLK		External Clock		D37 (GPIO 37) (See note)
+SDA		I2C Data		SDA (GPIO 13)
+SCL		I2C Clock		SCL (GPIO 14)
+D7		Data 7			D38 (GPIO 38)
+D6		Data 6			D39 (GPIO 39)
+D5		Data 5			D40 (GPIO 40)
+D4		Data 4			D41 (GPIO 41)
+D3		Data 3			D42 (GPIO 42)
+D2		Data 2			D43 (GPIO 43)
+D1		Data 1			D44 (GPIO 44)
+D0		Data 0			D45 (GPIO 45)
+VSYNC		Vertical Sync		D34 (GPIO 34)
+HREF		Horizontal Ref		D35 (GPIO 35)
+PCLK		Pixel Clock		D36 (GPIO 36)
+
+
+
+
+#define PWDN_GPIO_NUM     -1
+#define RESET_GPIO_NUM    -1
+#define XCLK_GPIO_NUM     39
+#define SIOD_GPIO_NUM     47
+#define SIOC_GPIO_NUM     48
+#define Y9_GPIO_NUM       12
+#define Y8_GPIO_NUM       11
+#define Y7_GPIO_NUM       10
+#define Y6_GPIO_NUM       9
+#define Y5_GPIO_NUM       8
+#define Y4_GPIO_NUM       7
+#define Y3_GPIO_NUM       6
+#define Y2_GPIO_NUM       5
+#define VSYNC_GPIO_NUM    4
+#define HREF_GPIO_NUM     3
+#define PCLK_GPIO_NUM     13
+
+
+
+CAMERA_MODEL_ESP_EYE
+#define Y9_GPIO_NUM      36
+#define Y8_GPIO_NUM      37
+#define Y7_GPIO_NUM      38
+#define Y6_GPIO_NUM      39
+#define Y5_GPIO_NUM      35
+#define Y4_GPIO_NUM      14
+#define Y3_GPIO_NUM      13
+#define Y2_GPIO_NUM      34
+
+
+#if defined(CAMERA_MODEL_ESP32S3_EYE)
+#define PWDN_GPIO_NUM -1
+#define RESET_GPIO_NUM -1
+#define XCLK_GPIO_NUM 15
+#define SIOD_GPIO_NUM 4
+#define SIOC_GPIO_NUM 5
+
+#define Y2_GPIO_NUM 11
+#define Y3_GPIO_NUM 9
+#define Y4_GPIO_NUM 8
+#define Y5_GPIO_NUM 10
+#define Y6_GPIO_NUM 12
+#define Y7_GPIO_NUM 18
+#define Y8_GPIO_NUM 17
+#define Y9_GPIO_NUM 16
+
+Adafruit LCD 
+
+Connect 
+
+add resistor between ESP32-S3 5V and LCD +5V
+
+LCD pin name RS EN   Vss/0V   Vdd/+5V
+LCD pin # 4   6     1        2
+
+DB0 DB1 DB2 DB3 DB4 DB5 DB6 DB7 
+7    8   9   10  11  12  13  14  
+
+LCD pin name 	RS 	EN 	DB4 	DB5 	DB6 	DB7
+LCD pin # 	4 	6 	9 	10 	11 	12
+ESP32-S3 pin #  41      42      19      20      21      47
+
+
+#define LCD_RS_GPIO 41
+#define LCD_EN_GPIO 42
+#define LCD_D4_GPIO 19
+#define LCD_D5_GPIO 20
+#define LCD_D6_GPIO 21
+#define LCD_D7_GPIO 47
+
+
+LiquidCrystal lcd(LCD_RS_GPIO, LCD_EN_GPIO, LCD_D4_GPIO, LCD_D5_GPIO, LCD_D6_GPIO, LCD_D7_GPIO);
+
