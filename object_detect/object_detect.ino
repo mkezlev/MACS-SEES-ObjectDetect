@@ -326,7 +326,7 @@ static int ei_camera_get_data(size_t offset, size_t length, float *out_ptr)
         
     for (size_t i = 0; i < length; i++) {
         // Normalizing 0-255 grayscale value to 0.0-1.0 float
-        out_ptr[i] = (float)fb->buf[offset + i] / 255.0f;
+        out_ptr[i] = (float)snapshot_buf [offset + i] / 255.0f;
     }
     return 0;
  }
